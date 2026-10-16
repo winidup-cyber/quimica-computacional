@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química Computacional - UMSA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="imagenes/Diseño sin título (2).png">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        aqua: {
+                            50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4',
+                            400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e',
+                            800: '#115e59', 900: '#134e4a',
+                        },
+                        celeste: { 500: '#0ea5e9', 600: '#0284c7' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .carousel-track { transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f0fdfa; }
+        ::-webkit-scrollbar-thumb { background: #2dd4bf; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0d9488; }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans overflow-x-hidden pt-16">
+
+    <!-- NAVEGACIÓN SUPERIOR -->
+    <nav class="fixed top-0 left-0 w-full bg-aqua-950/90 backdrop-blur-md text-white z-50 shadow-lg border-b border-aqua-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 font-heading font-bold text-xl text-aqua-300">
+                    <i class="fas fa-flask mr-2"></i>LabVirtual
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-semibold">
+                    <a href="#presentacion-curso" class="hover:text-aqua-300 transition-colors">Presentación del curso</a>
+                    <a href="#presentacion-docente" class="hover:text-aqua-300 transition-colors">Presentación del docente</a>
+                    <a href="#competencias" class="hover:text-aqua-300 transition-colors">Competencias del curso</a>
+                    <a href="#unidades" class="hover:text-aqua-300 transition-colors">Unidades del curso</a>
+                    <a href="#aulas-virtuales" class="hover:text-aqua-300 transition-colors text-celeste-500">Acceso a aulas virtuales</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. ENCABEZADO -->
+    <header class="bg-gradient-to-br from-aqua-900 via-aqua-700 to-celeste-600 text-white relative pb-16 pt-12 md:pt-20 shadow-lg" data-aos="fade-down" data-aos-duration="1000">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+            <svg class="absolute bottom-0 w-full h-auto text-white" viewBox="0 0 1440 320" fill="currentColor">
+                <path d="M0,160L48,165.3C96,171,192,181,288,165.3C384,149,480,107,576,96C672,85,768,107,864,133.3C960,160,1056,192,1152,186.7C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center float-anim">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-aqua-100 drop-shadow-sm">
+                QUÍMICA COMPUTACIONAL
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-aqua-200 font-semibold mb-8">
+                Bienvenid@ a Química Computacional: Simulación y Reactividad.
+            </h2>
+        </div>
+    </header>
+
+    <!-- 2. CARRUSEL Y RECUADROS LATERALES -->
+    <section class="w-full max-w-7xl mx-auto mt-8 px-4 relative z-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch">
+            
+            <!-- Recuadro Izquierdo: Últimos Descubrimientos -->
+            <a href="https://news.google.com/search?q=qu%C3%ADmica+descubrimientos+cientificos&hl=es-419&gl=US&ceid=US%3Aes-419" target="_blank" data-aos="fade-right" data-aos-delay="200" class="order-2 lg:order-1 lg:col-span-2 hidden md:flex flex-col rounded-2xl overflow-hidden shadow-xl border-2 border-aqua-200 bg-white relative group h-48 lg:h-auto cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Descubrimientos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100 mix-blend-multiply">
+                <div class="absolute inset-0 bg-gradient-to-t from-aqua-900/90 via-aqua-900/40 to-transparent flex flex-col justify-end p-4 text-center">
+                    <i class="fas fa-newspaper text-white text-2xl mb-2 group-hover:animate-bounce"></i>
+                    <h4 class="text-white font-heading font-semibold text-sm leading-tight uppercase tracking-wide">Últimos descubrimientos científicos</h4>
+                </div>
+            </a>
+
+            <!-- Carrusel Principal -->
+            <div data-aos="zoom-in" class="order-1 lg:order-2 lg:col-span-8 relative rounded-2xl overflow-hidden shadow-2xl shadow-aqua-900/20 bg-aqua-950 aspect-[16/9] border-4 border-white group">
+                <div class="absolute top-4 right-4 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span class="bg-white/90 text-aqua-900 text-xs font-bold px-3 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                        <i class="fab fa-google-drive mr-1"></i> Abrir en Drive
+                    </span>
+                </div>
+                <div id="carousel-track" class="carousel-track flex w-full h-full">
+                    <a href="https://drive.google.com/drive/folders/1ZTAiaLc42OPcKMc3y7_IjICMevg-iK0B?usp=sharing" target="_blank" class="w-full h-full flex-shrink-0 relative block cursor-pointer">
+                        <img src="imagenes/carrusel/9284941.png" alt="Simulación" class="w-full h-full object-cover opacity-80 mix-blend-overlay hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 bg-gradient-to-t from-aqua-950 via-aqua-900/80 to-transparent">
+                            <span class="bg-aqua-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3 inline-block">Simulación</span>
+                            <h3 class="text-white text-xl md:text-3xl font-bold font-heading drop-shadow-md">Estructura Molecular</h3>
+                        </div>
+                    </a>
+                    <a href="https://drive.google.com/drive/" target="_blank" class="w-full h-full flex-shrink-0 relative block cursor-pointer">
+                        <img src="imagenes/carrusel/images (1).png" alt="Dinámica" class="w-full h-full object-cover opacity-80 mix-blend-overlay hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 bg-gradient-to-t from-aqua-950 via-aqua-900/80 to-transparent">
+                            <span class="bg-celeste-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3 inline-block">Dinámica</span>
+                            <h3 class="text-white text-xl md:text-3xl font-bold font-heading drop-shadow-md">Interacciones en Tiempo Real</h3>
+                        </div>
+                    </a>
+                </div>
+                <button id="prev-btn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-aqua-500 text-white w-10 h-10 flex items-center justify-center rounded-full transition-all z-30"><i class="fas fa-chevron-left"></i></button>
+                <button id="next-btn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-aqua-500 text-white w-10 h-10 flex items-center justify-center rounded-full transition-all z-30"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Recuadro Derecho: Biblioteca de Moléculas -->
+            <button onclick="document.getElementById('modal-biblioteca').classList.remove('hidden')" data-aos="fade-left" data-aos-delay="200" class="order-3 lg:order-3 lg:col-span-2 hidden md:flex flex-col rounded-2xl overflow-hidden shadow-xl border-2 border-aqua-200 bg-white relative group h-48 lg:h-auto cursor-pointer focus:outline-none focus:ring-4 focus:ring-aqua-300">
+                <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Moléculas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100 mix-blend-multiply">
+                <div class="absolute inset-0 bg-gradient-to-t from-aqua-900/90 via-aqua-900/40 to-transparent flex flex-col justify-end p-4 text-center">
+                    <i class="fas fa-database text-white text-2xl mb-2 group-hover:rotate-12 transition-transform"></i>
+                    <h4 class="text-white font-heading font-semibold text-sm leading-tight uppercase tracking-wide">Biblioteca de moléculas</h4>
+                </div>
+            </button>
+        </div>
+    </section>
+
+    <!-- 3. PRESENTACIÓN DEL CURSO -->
+    <section id="presentacion-curso" class="max-w-5xl mx-auto px-4 py-16">
+        <div data-aos="fade-up" class="bg-white rounded-3xl shadow-lg border border-aqua-100 p-8 md:p-12 text-center relative overflow-hidden transition-all hover:shadow-2xl hover:-translate-y-1 duration-300">
+            <div class="absolute top-0 right-0 opacity-5 text-aqua-900 transform translate-x-1/4 -translate-y-1/4 float-anim"><i class="fas fa-atom text-9xl"></i></div>
+            <p class="text-lg md:text-xl text-slate-700 leading-relaxed font-light mb-10 relative z-10">
+                Esta materia te ofrece un laboratorio virtual para ver, simular y predecir el comportamiento de moléculas. Aprenderás con herramientas científicas actuales, sin importar tu formación previa, y podrás explorar lo invisible y diseñar lo que aún no existe. La química computacional es el presente: convierte tus preguntas en experimentos virtuales y tus ideas en descubrimientos. <strong>¡Comencemos!</strong>
+            </p>
+            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-aqua-50 z-10 bg-slate-900">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="imagenes/bienvenidos (1).mp4" title="Video Introductorio" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. RECUADROS DE INFORMACIÓN -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div data-aos="flip-left" data-aos-delay="100" class="bg-gradient-to-br from-white to-aqua-50 rounded-2xl shadow-md border-t-4 border-aqua-400 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div class="text-aqua-600 mb-4 text-3xl group-hover:scale-110 transition-transform origin-left"><i class="fas fa-microscope"></i></div>
+                <h3 class="text-xl font-bold font-heading text-aqua-900 mb-4">Presentación del curso: Química Computacional</h3>
+                <p class="text-slate-600 leading-relaxed text-sm">Este curso te introduce en el uso de herramientas computacionales para modelar, predecir y analizar sistemas moleculares. Aprenderás a aplicar métodos cuánticos, mecánica molecular y dinámica molecular para estudiar estructura, propiedades, reactividad, interacciones intermoleculares y espectros teóricos (IR, UV-Vis, RMN <sup>1</sup>H y <sup>13</sup>C).</p>
+            </div>
+            <div data-aos="flip-right" data-aos-delay="200" class="bg-gradient-to-br from-white to-aqua-50 rounded-2xl shadow-md border-t-4 border-celeste-500 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div class="text-celeste-600 mb-4 text-3xl group-hover:scale-110 transition-transform origin-left"><i class="fas fa-brain"></i></div>
+                <h3 class="text-xl font-bold font-heading text-aqua-900 mb-4">¿Qué aprenderás?</h3>
+                <p class="text-slate-600 leading-relaxed text-sm">A simular moléculas de interés en cualquier área, interpretar críticamente los resultados, compararlos con datos experimentales y comunicarlos con rigor científico. También desarrollarás criterio para elegir el método adecuado y usarás buenas prácticas éticas, incluyendo el uso responsable de IA.</p>
+            </div>
+            <div data-aos="flip-left" data-aos-delay="300" class="bg-gradient-to-br from-white to-aqua-50 rounded-2xl shadow-md border-t-4 border-aqua-500 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div class="text-aqua-600 mb-4 text-3xl group-hover:scale-110 transition-transform origin-left"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="text-xl font-bold font-heading text-aqua-900 mb-4">¿Cómo lo harás?</h3>
+                <p class="text-slate-600 leading-relaxed text-sm">Mediante videos, infografías interactivas, laboratorios computacionales, foros, cuestionarios y un proyecto integrador. La modalidad es híbrida/e-learning, combinando trabajo asincrónico con sesiones sincrónicas de práctica y discusión.</p>
+            </div>
+            <div data-aos="flip-right" data-aos-delay="400" class="bg-gradient-to-br from-white to-aqua-50 rounded-2xl shadow-md border-t-4 border-teal-500 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+                <div class="text-teal-600 mb-4 text-3xl group-hover:scale-110 transition-transform origin-left"><i class="fas fa-clipboard-check"></i></div>
+                <h3 class="text-xl font-bold font-heading text-aqua-900 mb-4">¿Cómo se evaluará?</h3>
+                <p class="text-slate-600 leading-relaxed text-sm">Con cuestionarios, participación en foros, ejercicios prácticos, informes de laboratorio y un proyecto final, usando rúbricas que valoran comprensión, manejo técnico, análisis crítico, comunicación y ética. Al finalizar, serás capaz de utilizar simulaciones moleculares para investigar, innovar y resolver problemas químicos reales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. COMPETENCIAS DEL CURSO -->
+    <section id="competencias" class="max-w-7xl mx-auto px-4 py-16">
+        <div data-aos="fade-up" class="bg-white rounded-2xl shadow-lg border border-aqua-100 overflow-hidden transition-shadow hover:shadow-xl">
+            <div class="bg-aqua-900 p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold font-heading text-white">Competencias del Perfil</h2>
+            </div>
+            <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-aqua-800 mb-4 border-b-2 border-aqua-200 inline-block pb-1">Competencia general:</h3>
+                    <p class="text-slate-700 leading-relaxed">Aplicar métodos de química cuántica, mecánica molecular y dinámica molecular para modelar, predecir y analizar propiedades, reactividad, interacciones intermoleculares y espectros teóricos, interpretando resultados y comunicándolos con rigor.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-aqua-800 mb-4 border-b-2 border-aqua-200 inline-block pb-1">Competencias específicas:</h3>
+                    <ul class="space-y-4 text-slate-700">
+                        <li class="flex items-start group"><i class="fas fa-check-circle text-aqua-500 mt-1 mr-3 group-hover:scale-125 transition-transform"></i><span>Seleccionar el método computacional adecuado y ejecutar simulaciones verificando validez.</span></li>
+                        <li class="flex items-start group"><i class="fas fa-check-circle text-aqua-500 mt-1 mr-3 group-hover:scale-125 transition-transform"></i><span>Interpretar espectros teóricos IR, UV-Vis y RMN, comparándolos con datos experimentales.</span></li>
+                        <li class="flex items-start group"><i class="fas fa-check-circle text-aqua-500 mt-1 mr-3 group-hover:scale-125 transition-transform"></i><span>Comunicar resultados científicos de forma clara, ética y con uso responsable de IA.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. PRESENTACIÓN DEL DOCENTE (ACTUALIZADA) -->
+    <section id="presentacion-docente" class="bg-aqua-50 py-16 border-y border-aqua-100">
+        <div class="max-w-5xl mx-auto px-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold font-heading text-center text-aqua-900 mb-12">Presentación del Docente</h2>
+            <div class="flex flex-col md:flex-row items-stretch bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="md:w-1/3 min-h-[300px] bg-aqua-200 relative">
+                    <img src="imagenes/bfdc634a-84e9-4622-9d6e-c55e2be57508.png" alt="Foto del Docente" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                <div class="md:w-2/3 p-8 md:p-10 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold font-heading text-aqua-900 mb-4 border-b-2 border-aqua-200 inline-block pb-1 self-start">Presentación del docente</h3>
+                    
+                    <p class="text-slate-700 leading-relaxed mb-4">
+                        Soy Wiñay Duran, química especialista en simulación computacional y química verde, con experencia en el área de materiales y extracciones.
+                    </p>
+                    
+                    <p class="text-slate-700 leading-relaxed mb-4">
+                        Mi filosofía es simple: aprender haciendo. En esta materia no solo usarás software; aprenderás a pensar como un químico computacional: formular problemas, elegir métodos, interpretar resultados y comunicarlos con rigor. Te acompañaré paso a paso para que pierdas el miedo a la computadora y descubras que la química computacional es una herramienta poderosa para responder preguntas reales.
+                    </p>
+                    
+                    <p class="text-slate-700 leading-relaxed mb-6 bg-aqua-50 p-3 rounded-lg border-l-4 border-aqua-500">
+                        Mi meta es que al final del curso seas capaz de simular moléculas de tu interés con confianza, criterio científico y ética profesional.
+                    </p>
+                    
+                    <div class="mt-auto flex items-center bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <i class="fas fa-address-card text-aqua-600 text-2xl mr-4"></i>
+                        <p class="text-sm text-slate-600">
+                            Contacto: wduranp@umsa.bo &middot; Consultas Lunes a sábados de 09:00 - 18:00 &middot; Foro de consultas Moodle
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. UNIDADES DEL CURSO Y SUBIDA DE SÍLABO -->
+    <section id="unidades" class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12" data-aos="fade-down">
+            <h2 class="text-3xl font-bold font-heading text-aqua-900 mb-4">Unidades del Curso</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-aqua-400 to-celeste-500 mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Tabla de Unidades -->
+        <div data-aos="fade-up" class="bg-white rounded-2xl shadow-lg border border-aqua-100 overflow-hidden mb-12">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gradient-to-r from-aqua-900 to-aqua-700 text-white">
+                            <th class="py-4 px-6 font-bold font-heading border-b border-aqua-800 w-1/4">Unidad</th>
+                            <th class="py-4 px-6 font-bold font-heading border-b border-aqua-800 w-3/4">Contenido Temático</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700 divide-y divide-slate-100">
+                        <tr class="hover:bg-aqua-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-aqua-700 group-hover:text-aqua-900">Unidad 1</td>
+                            <td class="py-4 px-6 font-medium">Introducción a los cálculos teóricos</td>
+                        </tr>
+                        <tr class="hover:bg-aqua-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-aqua-700 group-hover:text-aqua-900">Unidad 2</td>
+                            <td class="py-4 px-6 font-medium">Mecánica molecular y dinámica molecular</td>
+                        </tr>
+                        <tr class="hover:bg-aqua-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-aqua-700 group-hover:text-aqua-900">Unidad 3</td>
+                            <td class="py-4 px-6 font-medium">Métodos de química cuántica: ab initio y DFT</td>
+                        </tr>
+                        <tr class="hover:bg-aqua-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-aqua-700 group-hover:text-aqua-900">Unidad 4</td>
+                            <td class="py-4 px-6 font-medium">Modelado molecular y espectroscopia teórica</td>
+                        </tr>
+                        <tr class="hover:bg-aqua-50 transition-colors group">
+                            <td class="py-4 px-6 font-bold text-aqua-700 group-hover:text-aqua-900">Unidad 5</td>
+                            <td class="py-4 px-6 font-medium">Problemas y aplicaciones</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Zona de Subida/Descarga de Sílabo en PDF -->
+        <div data-aos="zoom-in" class="max-w-2xl mx-auto bg-gradient-to-b from-white to-slate-50 rounded-2xl shadow-md border-2 border-dashed border-aqua-300 p-8 text-center hover:border-aqua-500 hover:bg-aqua-50/50 transition-all duration-300 group">
+            <div class="text-aqua-400 mb-4 text-4xl group-hover:scale-110 group-hover:text-aqua-600 transition-transform"><i class="fas fa-file-pdf"></i></div>
+            <h3 class="text-xl font-bold font-heading text-aqua-900 mb-2">Sílabo Oficial del Curso</h3>
+            <a href="imagenes/Silabo_Quimica_Computacional_UMSA.pdf" download="Silabo_Quimica_Computacional.pdf" class="cursor-pointer inline-flex items-center justify-center bg-aqua-600 hover:bg-aqua-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <i class="fas fa-file-download mr-2 text-lg"></i> Descargar Sílabo
+</a>
+        </div>
+    </section>
+
+    <!-- 8. ACCESO A LAS AULAS VIRTUALES -->
+    <section id="aulas-virtuales" class="bg-aqua-900 py-16 border-t-4 border-aqua-400 relative overflow-hidden">
+        <!-- Decoración de fondo -->
+        <div class="absolute -right-10 -bottom-10 text-white/5 text-9xl pointer-events-none"><i class="fas fa-laptop-code"></i></div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl font-bold font-heading text-white mb-8" data-aos="fade-down">Acceso a las Aulas Virtuales</h2>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="https://moodle.milaulas.com/login/index.php" data-aos="zoom-in" data-aos-delay="100" class="w-full sm:w-auto flex items-center justify-center space-x-3 bg-white text-orange-600 hover:bg-orange-50 font-bold py-4 px-10 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all transform hover:scale-105">
+                    <i class="fas fa-graduation-cap text-2xl"></i>
+                    <span class="text-lg">Acceso Moodle</span>
+                </a>
+                <a href="https://classroom.google.com/c/ODg3NTIyNDIwMDc2?cjc=snpmhsjr" data-aos="zoom-in" data-aos-delay="200" class="w-full sm:w-auto flex items-center justify-center space-x-3 bg-white text-green-600 hover:bg-green-50 font-bold py-4 px-10 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all transform hover:scale-105">
+                    <i class="fas fa-chalkboard-teacher text-2xl"></i>
+                    <span class="text-lg">Acceso Classroom</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-aqua-950 text-aqua-200 py-8 border-t border-aqua-900">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm font-medium">© 2026 Laboratorio de Química Computacional UMSA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL BIBLIOTECA (Se mantiene oculto por defecto) -->
+    <div id="modal-biblioteca" class="fixed inset-0 z-[100] hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col relative overflow-hidden">
+            <div class="bg-aqua-900 p-6 flex justify-between items-center text-white shrink-0">
+                <h3 class="text-2xl font-bold font-heading flex items-center"><i class="fas fa-database mr-3"></i> Biblioteca de Moléculas y Simulación</h3>
+                <button onclick="document.getElementById('modal-biblioteca').classList.add('hidden')" class="text-white hover:text-aqua-200 text-3xl leading-none focus:outline-none">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto bg-slate-50 flex-grow space-y-6 text-sm text-slate-700 custom-scrollbar">
+                <p class="text-base text-slate-600 mb-4">Directorios y bases de datos con coordenadas 3D, parámetros y herramientas para modelado físico/biológico.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-aqua-800 text-lg border-b border-aqua-200 pb-2 mb-3">Estructuras Moleculares y Cristalinas</h4>
+                        <ul class="space-y-2">
+                            <li><a href="https://www.rcsb.org/" target="_blank" class="text-celeste-600 hover:underline font-semibold">Protein Data Bank (PDB)</a></li>
+                            <li><a href="https://www.ccdc.cam.ac.uk/" target="_blank" class="text-celeste-600 hover:underline font-semibold">Cambridge Structural Database (CSD)</a></li>
+                            <li><a href="http://www.crystallography.net/cod/" target="_blank" class="text-celeste-600 hover:underline font-semibold">Crystallography Open Database (COD)</a></li>
+                            <li><a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" class="text-celeste-600 hover:underline font-semibold">PubChem</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-aqua-800 text-lg border-b border-aqua-200 pb-2 mb-3">Software Simulación y Docking</h4>
+                        <ul class="space-y-2">
+                            <li><a href="http://www.gromos.net/" target="_blank" class="text-teal-600 hover:underline font-semibold">GROMOS</a></li>
+                            <li><a href="https://vina.scripps.edu/" target="_blank" class="text-teal-600 hover:underline font-semibold">AutoDock / Vina</a></li>
+                            <li><a href="https://avogadro.cc/" target="_blank" class="text-indigo-600 hover:underline font-semibold">Avogadro</a></li>
+                            <li><a href="https://molview.org/" target="_blank" class="text-indigo-600 hover:underline font-semibold">MolView</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-100 p-4 shrink-0 text-center border-t border-slate-200">
+                <button onclick="document.getElementById('modal-biblioteca').classList.add('hidden')" class="bg-aqua-600 hover:bg-aqua-700 text-white font-bold py-2 px-6 rounded-full shadow transition-colors">Cerrar Biblioteca</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ once: true, offset: 100 });
+
+            // Carrusel Logic
+            const track = document.getElementById('carousel-track');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slides = track.children;
+            let currentIndex = 0;
+            let autoPlayInterval;
+
+            const updateCarousel = () => { track.style.transform = `translateX(-${currentIndex * 100}%)`; };
+            const nextSlide = () => { currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1; updateCarousel(); };
+            const prevSlide = () => { currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1; updateCarousel(); };
+            const resetAutoPlay = () => { clearInterval(autoPlayInterval); autoPlayInterval = setInterval(nextSlide, 6000); };
+
+            nextBtn.addEventListener('click', (e) => { e.preventDefault(); nextSlide(); resetAutoPlay(); });
+            prevBtn.addEventListener('click', (e) => { e.preventDefault(); prevSlide(); resetAutoPlay(); });
+            resetAutoPlay();
+            
+            // Cerrar modal al clickear fondo oscuro
+            const modal = document.getElementById('modal-biblioteca');
+            modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.add('hidden'); });
+        });
+    
+    </script>
+</body>
+</html>
